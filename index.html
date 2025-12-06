@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>View Source Code - Dymzxx</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="introPage" class="content-page show">
+    <img src="https://files.catbox.moe/2iko67.png" alt="Developer Dymzxx" class="developer-photo">
+    <div class="page-text">
+      <h2>Hai, Ini Dymzxx!</h2>
+      <p>Selamat datang di View Page Source. <br>Sebuah web kecil untuk melihat kode sumber halaman web lain By Dymzxx Tele@DYZ969.</p>
+    </div>
+    <div class="page-actions">
+        <button id="continueBtn" class="btn">Lanjut</button>
+    </div>
+  </div>
+
+  <div id="qrPage" class="content-page hide">
+    <a href="https://saweria.co/rayydev" target="_blank" rel="noopener noreferrer">
+      <img src="https://files.catbox.moe/bpafb8.png" alt="QR Code Miray" class="qr-code">
+    </a>
+    <div class="qr-code-info page-text">
+      <h2>Dukungan Untuk Developer</h2>
+      <p>Silakan pindai kode QR di atas atau klick.<br> Di sana, Anda bisa memberi dukungan untuk developer agar lebih semangat dan rajin membagikan tools.</p>
+    </div>
+    <div class="page-actions">
+        <button id="backBtn" class="ghost">Kembali</button>
+        <button id="toAppBtn" class="btn">Masuk Aplikasi</button>
+    </div>
+  </div>
+
+  <div id="appContainer" class="app-container">
+    <div class="app" role="main">
+      <h1>Viewing web code</h1>
+      <p class="note">Masukkan URL <code></code>. Kalau server target menolak CORS, saya akan coba lewat proxy publik.</p>
+
+      <div class="row" style="margin-bottom:8px;">
+        <input id="url" class="url-input" placeholder="Masukkan URL" value="">
+        <button id="fetchBtn" class="btn">Lihat Source</button>
+        <button id="clearBtn" class="ghost">Bersihkan</button>
+      </div>
+
+      <div class="examples">
+        
+        <div class="chip" data-url="https://example.com/">example.com</div>
+        <div class="chip" data-url="https://www.wikipedia.org/">wikipedia.org</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="backdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Source viewer">
+      <div class="modal-head">
+        <div class="modal-title" id="modalTitle">Source — </div>
+        <div class="modal-actions">
+          <div class="toolbar">
+            <button id="copyBtn" class="btn">Salin Kode</button>
+            <button id="downloadBtn" class="btn">Download</button>
+            <button id="closeBtn" class="ghost">Tutup</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+          <div id="status" class="status">Menunggu...</div>
+        </div>
+        <pre id="source" class="source"><code>// Source akan tampil di sini...</code></pre>
+      </div>
+    </div>
+  </div>
+  
+  <div id="copyNotification" class="copy-notification">
+    Tersalin!
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
